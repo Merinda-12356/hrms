@@ -1,59 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HRMS</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HRMS Platform</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- LOGIN -->
-  <div id="login-view">
-    <form class="login-card" onsubmit="login(event)">
-      <h1>HRMS</h1>
-      <p class="muted">Sign in to continue</p>
-      <label>Email <input id="email" type="email" required /></label>
-      <label>Password <input id="password" type="password" required /></label>
-      <p id="login-error" class="error"></p>
-      <button class="primary" type="submit">Sign in</button>
-      <div class="demo">
-        <strong>Demo logins</strong><br />
-        admin@demo.com / admin123<br />
-        hr@demo.com / hr123<br />
-        emp@demo.com / emp123
-      </div>
-    </form>
-  </div>
+    <div class="app">
 
-  <!-- APP -->
-  <div id="app-view" class="hidden">
-    <aside class="sidebar">
-      <div class="brand">HRMS</div>
-      <nav id="nav"></nav>
-      <button class="link" onclick="logout()">Log out</button>
-    </aside>
-    <main>
-      <header class="topbar">
-        <h2 id="page-title"></h2>
-        <span id="user-info" class="muted"></span>
-      </header>
-      <section id="content"></section>
-    </main>
-  </div>
+        <!-- Sidebar -->
+        <aside class="sidebar">
 
-  <!-- MODAL -->
-  <div id="modal" class="hidden">
-    <form id="modal-form" class="modal-card">
-      <h3 id="modal-title"></h3>
-      <div id="modal-form-body"></div>
-      <div class="actions">
-        <button type="button" onclick="closeModal()">Cancel</button>
-        <button class="primary" type="submit">Save</button>
-      </div>
-    </form>
-  </div>
+            <div class="brand">
+                <div class="brand-logo">H</div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+                <div>
+                    <h2>HRMS</h2>
+                    <span>Human Resources</span>
+                </div>
+            </div>
+
+            <nav class="navigation">
+
+                <div class="nav-section">
+                    <span>MAIN</span>
+
+                    <a href="#" class="nav-item active" data-page="dashboard">
+                        <span>▦</span>
+                        Dashboard
+                    </a>
+
+                    <a href="#" class="nav-item" data-page="employees">
+                        <span>♙</span>
+                        Employees
+                    </a>
+
+                    <a href="#" class="nav-item" data-page="attendance">
+                        <span>◷</span>
+                        Attendance
+                    </a>
+
+                    <a href="#" class="nav-item" data-page="leave">
+                        <span>◫</span>
+                        Leave
+                    </a>
+                </div>
+
+                <div class="nav-section">
+
+                    <span>PEOPLE</span>
+
+                    <a href="#" class="nav-item" data-page="recruitment">
+                        <span>♧</span>
+                        Recruitment
+                    </a>
+
+                    <a href="#" class="nav-item" data-page="onboarding">
+                        <span>✓</span>
+                        Onboarding
+                    </a>
+
+                    <a href="#" class="nav-item" data-page="performance">
+                        <span>↗</span>
+                        Performance
+                    </a>
+
+                </div>
+
+                <div class="nav-section">
+
+                    <span>FINANCE</span>
+
+                    <a href="#" class="nav-item" data-page="payroll">
+                        <span>₹</span>
+                        Payroll
+                    </a>
+
+                    <a href="#" class="nav-item" data-page="expenses">
+                        <span>◈</span>
+                        Expenses
+                    </a>
+
+                </div>
+
+                <div class="nav-section">
+
+                    <span>ADMINISTRATION</span>
+
+                    <a href="#" class="nav-item" data-page="reports">
+                        <span>▤</span>
+                        Reports
+                    </a>
+
+                    <a href="#" class="nav-item" data-page="settings">
+                        <span>⚙</span>
+                        Settings
+                    </a>
+
+                </div>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-mini">
+
+                    <div class="avatar">
+                        AK
+                    </div>
+
+                    <div>
+                        <strong>Admin User</strong>
+                        <small>Administrator</small>
+                    </div>
+
+                </div>
+            </div>
+
+        </aside>
+
+
+        <!-- Main -->
+        <main class="main">
+
+            <!-- Header -->
+            <header class="topbar">
+
+                <div>
+                    <h1 id="page-title">Dashboard</h1>
+                    <p id="page-subtitle">
+                        Welcome back. Here's what's happening today.
+                    </p>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button class="icon-button">
+                        🔔
+                    </button>
+
+                    <div class="profile">
+                        <div class="avatar">
+                            AK
+                        </div>
