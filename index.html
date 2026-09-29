@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRMS Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= LOGIN PAGE ================= -->
+
+<div id="loginPage" class="login-page">
+
+    <div class="login-container">
+
+        <div class="login-brand">
+            <div class="logo">H</div>
+
+            <h1>HRMS</h1>
+
+            <p>Human Resource Management System</p>
+        </div>
+
+        <div class="login-card">
+
+            <h2>Welcome Back</h2>
+
+            <p class="login-subtitle">
+                Sign in to access your HRMS dashboard
+            </p>
+
+            <label>Email Address</label>
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+            >
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+            >
+
+            <div class="remember-row">
+
+                <label class="checkbox-label">
+                    <input type="checkbox">
+                    Remember me
+                </label>
+
+                <a href="#" onclick="forgotPassword()">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+            <button class="login-button" onclick="login()">
+                Login
+            </button>
+
+            <p class="demo-login">
+                Demo: admin@hrms.com / admin123
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= MAIN APPLICATION ================= -->
+
+<div id="app" class="app hidden">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo small-logo">H</div>
+
+            <div>
+                <h2>HRMS</h2>
+                <span>Management System</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <p class="menu-title">MAIN</p>
+
+            <a href="#" class="menu-item active"
+               onclick="showPage('dashboard', this)">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="#" class="menu-item"
+               onclick="showPage('employees', this)">
+                <span>👥</span>
+                Employees
+            </a>
+
+            <a href="#" class="menu-item"
+               onclick="showPage('attendance', this)">
+                <span>🕐</span>
+                Attendance
+            </a>
+
+            <a href="#" class="menu-item"
+               onclick="showPage('leave', this)">
+                <span>🏖️</span>
+                Leave Management
+            </a>
+
+            <a href="#" class="menu-item"
+               onclick="showPage('holidays', this)">
+                <span>📅</span>
+                Holidays
+            </a>
+
+
+            <p class="menu-title">EMPLOYEE SERVICES</p>
+
+            <a href="#" class="menu-item"
+               onclick="showPage('documents', this)">
+                <span>📄</span>
+                Documents
+            </a>
+
+            <a href="#" class="menu-item"
+               onclick="showPage('reports', this)">
+                <span>📈</span>
+                Reports
+            </a>
+
+
+            <p class="menu-title">SYSTEM</p>
+
+            <a href="#" class="menu-item"
+               onclick="showPage('settings', this)">
+                <span>⚙️</span>
+                Settings
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="user-mini">
+
+                <div class="avatar">
+                    M
+                </div>
+
+                <div>
+                    <strong>Merinda</strong>
+                    <small>HR Admin</small>
+                </div>
+
+            </div>
+
+            <button class="logout-button" onclick="logout()">
+                🚪 Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="mobile-menu"
+                 onclick="toggleSidebar()">
+                ☰
+            </div>
+
+            <div>
+
+                <h2 id="pageTitle">
+                    Dashboard
+                </h2>
+
+                <p id="pageSubtitle">
+                    Overview of your organization
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="icon-button"
+                        onclick="showNotification()">
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile-menu">
+
+                    <div class="avatar">
+                        M
+                    </div>
+
+                    <div class="profile-info">
+                        <strong>Merinda</strong>
+                        <small>HR Admin</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard" class="page-section">
+
+            <div class="welcome-card">
+
+                <div>
+
+                    <h1>
+                        Good Morning, Merinda 👋
+                    </h1>
+
+                    <p>
+                        Here's what's happening in your organization today.
+                    </p>
+
+                </div>
+
+                <div class="date-display" id="currentDate"></div>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        👥
+                    </div>
+
+                    <div>
+                        <span>Total Employees</span>
+                        <h2 id="totalEmployees">128</h2>
+                        <small class="positive">
+                            ↑ 8% this month
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+                        <span>Present Today</span>
+                        <h2 id="presentEmployees">112</h2>
+                        <small class="positive">
+                            87.5% attendance
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        ⏳
+                    </div>
+
+                    <div>
+                        <span>Leave Requests</span>
+                        <h2 id="pendingLeaves">5</h2>
+                        <small>
+                            Pending approval
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        🆕
+                    </div>
+
+                    <div>
+                        <span>New Joiners</span>
+                        <h2>3</h2>
+                        <small>
+                            This month
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <!-- Attendance -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Today's Attendance</h3>
+                            <p>Employee attendance overview</p>
+                        </div>
+
+                        <button
+                            class="secondary-button"
+                            onclick="showPage('attendance')">
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div class="attendance-summary">
+
+                        <div class="attendance-circle">
+                            <strong>87.5%</strong>
+                            <span>Present</span>
+                        </div>
+
+                        <div class="attendance-list">
+
+                            <div>
+                                <span class="status-dot green-dot"></span>
+                                Present
+                                <strong>112</strong>
+                            </div>
+
+                            <div>
+                                <span class="status-dot red-dot"></span>
+                                Absent
+                                <strong>10</strong>
+                            </div>
+
+                            <div>
+                                <span class="status-dot orange-dot"></span>
+                                Late
+                                <strong>6</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Leave requests -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Recent Leave Requests</h3>
+                            <p>Pending approvals</p>
+                        </div>
+
+                        <button
+                            class="secondary-button"
+                            onclick="showPage('leave')">
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div id="dashboardLeaveList">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quick actions -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Quick Actions</h3>
+                        <p>Frequently used HR functions</p>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <button onclick="openEmployeeModal()">
+                        <span>👤</span>
+                        Add Employee
+                    </button>
+
+                    <button onclick="showPage('attendance')">
+                        <span>🕐</span>
+                        Attendance
+                    </button>
+
+                    <button onclick="openLeaveModal()">
+                        <span>🏖️</span>
+                        Apply Leave
+                    </button>
+
+                    <button onclick="showPage('reports')">
+                        <span>📊</span>
+                        View Reports
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EMPLOYEES ================= -->
+
+        <section id="employees" class="page-section hidden">
+
+            <div class="section-actions">
+
+                <div>
+                    <h2>Employees</h2>
+                    <p>Manage employee information</p>
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="openEmployeeModal()">
+                    + Add Employee
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="toolbar">
+
+                    <div class="search-box">
+
+                        🔍
+
+                        <input
+                            type="text"
+                            id="employeeSearch"
+                            placeholder="Search employees..."
+                            onkeyup="searchEmployees()"
+                        >
+
+                    </div>
+
+
+                    <select id="departmentFilter"
+                            onchange="filterEmployees()">
+
+                        <option value="">All Departments</option>
+                        <option value="HR">HR</option>
+                        <option value="Sales">Sales</option>
+                        <option value="IT">IT</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Marketing">Marketing</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Employee</th>
+                                <th>Employee ID</th>
+                                <th>Department</th>
+                                <th>Designation</th>
+                                <th>Joining Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="employeeTableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ATTENDANCE ================= -->
+
+        <section id="attendance" class="page-section hidden">
+
+            <div class="section-actions">
+
+                <div>
+                    <h2>Attendance</h2>
+                    <p>Track employee attendance</p>
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="markAttendance()">
+                    ✓ Mark Attendance
+                </button>
+
+            </div>
+
+
+            <div class="attendance-check-card">
+
+                <div>
+
+                    <span class="attendance-status-label">
+                        Today's Attendance
+                    </span>
+
+                    <h1 id="attendanceStatus">
+                        Not Checked In
+                    </h1>
+
+                    <p id="attendanceTime">
+                        Please check in to start your workday.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="attendanceButton"
+                    class="attendance-button"
+                    onclick="toggleAttendance()">
+
+                    Check In
+
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Attendance History</h3>
+                        <p>Your recent attendance records</p>
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Date</th>
+                                <th>Check In</th>
+                                <th>Check Out</th>
+                                <th>Working Hours</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="attendanceTableBody">
+
+                            <tr>
+                                <td>29 Sep 2026</td>
+                                <td>09:12 AM</td>
+                                <td>06:05 PM</td>
+                                <td>8h 53m</td>
+                                <td>
+                                    <span class="badge success">
+                                        Present
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>28 Sep 2026</td>
+                                <td>09:05 AM</td>
+                                <td>06:10 PM</td>
+                                <td>9h 05m</td>
+                                <td>
+                                    <span class="badge success">
+                                        Present
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>27 Sep 2026</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>
+                                    <span class="badge warning">
+                                        Leave
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LEAVE ================= -->
+
+        <section id="leave" class="page-section hidden">
+
+            <div class="section-actions">
+
+                <div>
+                    <h2>Leave Management</h2>
+                    <p>Manage employee leave requests</p>
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="openLeaveModal()">
+                    + Apply Leave
+                </button>
+
+            </div>
+
+
+            <div class="leave-balance-grid">
+
+                <div class="leave-balance-card blue-border">
+
+                    <span>Annual Leave</span>
+
+                    <strong>12</strong>
+
+                    <small>Days remaining</small>
+
+                </div>
+
+
+                <div class="leave-balance-card green-border">
+
+                    <span>Sick Leave</span>
+
+                    <strong>8</strong>
+
+                    <small>Days remaining</small>
+
+                </div>
+
+
+                <div class="leave-balance-card orange-border">
+
+                    <span>Casual Leave</span>
+
+                    <strong>6</strong>
+
+                    <small>Days remaining</small>
+
+                </div>
+
+
+                <div class="leave-balance-card purple-border">
+
+                    <span>Unpaid Leave</span>
+
+                    <strong>0</strong>
+
+                    <small>Days remaining</small>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Leave Requests</h3>
+                        <p>Employee leave applications</p>
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Employee</th>
+                                <th>Leave Type</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Days</th>
+                                <th>Reason</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="leaveTableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HOLIDAYS ================= -->
+
+        <section id="holidays" class="page-section hidden">
+
+            <div class="section-actions">
+
+                <div>
+                    <h2>Holiday Calendar</h2>
+                    <p>Company holidays and important dates</p>
+                </div>
+
+                <button class="primary-button"
+                        onclick="addHoliday()">
+                    + Add Holiday
+                </button>
+
+            </div>
+
+
+            <div class="holiday-grid">
+
+                <div class="holiday-card">
+
+                    <div class="holiday-date">
+                        02
+                        <small>OCT</small>
+                    </div>
+
+                    <div>
+                        <h3>Gandhi Jayanti</h3>
+                        <p>National Holiday</p>
+                    </div>
+
+                </div>
+
+
+                <div class="holiday-card">
+
+                    <div class="holiday-date">
+                        20
+                        <small>OCT</small>
+                    </div>
+
+                    <div>
+                        <h3>Dussehra</h3>
+                        <p>Festival Holiday</p>
+                    </div>
+
+                </div>
+
+
+                <div class="holiday-card">
+
+                    <div class="holiday-date">
+                        25
+                        <small>DEC</small>
+                    </div>
+
+                    <div>
+                        <h3>Christmas</h3>
+                        <p>Festival Holiday</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DOCUMENTS ================= -->
+
+        <section id="documents" class="page-section hidden">
+
+            <div class="section-actions">
+
+                <div>
+                    <h2>Documents</h2>
+                    <p>Employee and company documents</p>
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="uploadDocument()">
+                    + Upload Document
+                </button>
+
+            </div>
+
+
+            <div class="document-grid">
+
+                <div class="document-card">
+                    <div class="document-icon">📄</div>
+                    <h3>Offer Letter</h3>
+                    <p>Employee offer documents</p>
+                    <button>View Documents</button>
+                </div>
+
+
+                <div class="document-card">
+                    <div class="document-icon">📑</div>
+                    <h3>Appointment Letters</h3>
+                    <p>Appointment documents</p>
+                    <button>View Documents</button>
+                </div>
+
+
+                <div class="document-card">
+                    <div class="document-icon">💰</div>
+                    <h3>Payslips</h3>
+                    <p>Employee salary documents</p>
+                    <button>View Documents</button>
+                </div>
+
+
+                <div class="document-card">
+                    <div class="document-icon">📋</div>
+                    <h3>Company Policies</h3>
+                    <p>HR policies and guidelines</p>
+                    <button>View Documents</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= REPORTS ================= -->
+
+        <section id="reports" class="page-section hidden">
+
+            <div class="section-actions">
+
+                <div>
+                    <h2>Reports</h2>
+                    <p>HR analytics and reports</p>
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="generateReport()">
+                    Generate Report
+                </button>
+
+            </div>
+
+
+            <div class="report-grid">
+
+                <div class="report-card">
+
+                    <span>👥</span>
+
+                    <h3>Employee Report</h3>
+
+                    <p>
+                        Employee count and department distribution.
+                    </p>
+
+                    <button onclick="generateReport()">
+                        View Report
+                    </button>
+
+                </div>
+
+
+                <div class="report-card">
+
+                    <span>🕐</span>
+
+                    <h3>Attendance Report</h3>
+
+                    <p>
+                        Employee attendance and working hours.
+                    </p>
+
+                    <button onclick="generateReport()">
+                        View Report
+                    </button>
+
+                </div>
+
+
+                <div class="report-card">
+
+                    <span>🏖️</span>
+
+                    <h3>Leave Report</h3>
+
+                    <p>
+                        Leave usage and pending requests.
+                    </p>
+
+                    <button onclick="generateReport()">
+                        View Report
+                    </button>
+
+                </div>
+
+
+                <div class="report-card">
+
+                    <span>📈</span>
+
+                    <h3>HR Analytics</h3>
+
+                    <p>
+                        Organization-level HR insights.
+                    </p>
+
+                    <button onclick="generateReport()">
+                        View Report
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SETTINGS ================= -->
+
+        <section id="settings" class="page-section hidden">
+
+            <div class="section-actions">
+
+                <div>
+                    <h2>Settings</h2>
+                    <p>Manage HRMS preferences</p>
+                </div>
+
+            </div>
+
+
+            <div class="card settings-card">
+
+                <h3>Organization Settings</h3>
+
+                <label>Company Name</label>
+
+                <input
+                    type="text"
+                    value="Your Company"
+                >
+
+                <label>Company Email</label>
+
+                <input
+                    type="email"
+                    value="hr@company.com"
+                >
+
+                <label>Working Hours</label>
+
+                <select>
+                    <option>9:00 AM - 6:00 PM</option>
+                    <option>10:00 AM - 7:00 PM</option>
+                </select>
+
+                <button
+                    class="primary-button"
+                    onclick="saveSettings()">
+                    Save Settings
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= ADD EMPLOYEE MODAL ================= -->
+
+<div id="employeeModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Add Employee</h2>
+                <p>Create a new employee record</p>
+            </div>
+
+            <button onclick="closeEmployeeModal()">
+                ✕
+            </button>
+
+        </div>
+
+
+        <form id="employeeForm"
+              onsubmit="addEmployee(event)">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>First Name *</label>
+
+                    <input
+                        type="text"
+                        id="firstName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Last Name *</label>
+
+                    <input
+                        type="text"
+                        id="lastName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Email *</label>
+
+                    <input
+                        type="email"
+                        id="employeeEmail"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Phone</label>
+
+                    <input
+                        type="tel"
+                        id="employeePhone"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Department *</label>
+
+                    <select id="employeeDepartment" required>
+
+                        <option value="">Select Department</option>
+                        <option>HR</option>
+                        <option>Sales</option>
+                        <option>IT</option>
+                        <option>Finance</option>
+                        <option>Marketing</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Designation *</label>
+
+                    <input
+                        type="text"
+                        id="employeeDesignation"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Joining Date *</label>
+
+                    <input
+                        type="date"
+                        id="joiningDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Employment Type</label>
+
+                    <select id="employmentType">
+
+                        <option>Full Time</option>
+                        <option>Part Time</option>
+                        <option>Contract</option>
+                        <option>Intern</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    onclick="closeEmployeeModal()">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button">
+                    Add Employee
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= LEAVE MODAL ================= -->
+
+<div id="leaveModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Apply Leave</h2>
+                <p>Submit a new leave request</p>
+            </div>
+
+            <button onclick="closeLeaveModal()">
+                ✕
+            </button>
+
+        </div>
+
+
+        <form id="leaveForm"
+              onsubmit="submitLeave(event)">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Employee *</label>
+
+                    <select id="leaveEmployee" required>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Leave Type *</label>
+
+                    <select id="leaveType" required>
+
+                        <option value="">Select Leave Type</option>
+                        <option>Annual Leave</option>
+                        <option>Sick Leave</option>
+                        <option>Casual Leave</option>
+                        <option>Unpaid Leave</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>From Date *</label>
+
+                    <input
+                        type="date"
+                        id="leaveFrom"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>To Date *</label>
+
+                    <input
+                        type="date"
+                        id="leaveTo"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                    <label>Reason *</label>
+
+                    <textarea
+                        id="leaveReason"
+                        rows="4"
+                        required
+                        placeholder="Enter reason for leave">
+                    </textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    onclick="closeLeaveModal()">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button">
+                    Submit Request
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast" class="toast"></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
