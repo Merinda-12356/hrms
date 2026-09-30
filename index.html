@@ -5,894 +5,575 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>HRMS360 | Human Resource Management System</title>
+    <title>HRMS360 | Human Resource Management</title>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="app-container">
+    <!-- ============================= -->
+    <!-- APP CONTAINER -->
+    <!-- ============================= -->
 
-    <!-- ================= SIDEBAR ================= -->
+    <div class="app-container">
 
-    <aside class="sidebar" id="sidebar">
+        <!-- ============================= -->
+        <!-- SIDEBAR -->
+        <!-- ============================= -->
 
-        <div class="logo-area">
-            <div class="logo-icon">
-                <i class="fa-solid fa-users"></i>
-            </div>
+        <aside class="sidebar" id="sidebar">
 
-            <div>
-                <h2>HRMS<span>360</span></h2>
-                <small>Human Resource Management</small>
-            </div>
-        </div>
+            <div class="brand">
 
-        <nav class="sidebar-menu">
-
-            <p class="menu-title">MAIN</p>
-
-            <a href="#" class="menu-item active" data-section="dashboard">
-                <i class="fa-solid fa-chart-pie"></i>
-                <span>Dashboard</span>
-            </a>
-
-            <a href="#" class="menu-item" data-section="employees">
-                <i class="fa-solid fa-users"></i>
-                <span>Employees</span>
-            </a>
-
-            <a href="#" class="menu-item" data-section="attendance">
-                <i class="fa-solid fa-calendar-check"></i>
-                <span>Attendance</span>
-            </a>
-
-            <a href="#" class="menu-item" data-section="leave">
-                <i class="fa-solid fa-plane-departure"></i>
-                <span>Leave</span>
-            </a>
-
-            <p class="menu-title">PEOPLE</p>
-
-            <a href="#" class="menu-item" data-section="recruitment">
-                <i class="fa-solid fa-user-plus"></i>
-                <span>Recruitment</span>
-            </a>
-
-            <a href="#" class="menu-item" data-section="onboarding">
-                <i class="fa-solid fa-person-circle-plus"></i>
-                <span>Onboarding</span>
-            </a>
-
-            <a href="#" class="menu-item" data-section="performance">
-                <i class="fa-solid fa-chart-line"></i>
-                <span>Performance</span>
-            </a>
-
-            <p class="menu-title">FINANCE</p>
-
-            <a href="#" class="menu-item" data-section="payroll">
-                <i class="fa-solid fa-money-bill-wave"></i>
-                <span>Payroll</span>
-            </a>
-
-            <a href="#" class="menu-item" data-section="expenses">
-                <i class="fa-solid fa-receipt"></i>
-                <span>Expenses</span>
-            </a>
-
-            <p class="menu-title">SYSTEM</p>
-
-            <a href="#" class="menu-item" data-section="reports">
-                <i class="fa-solid fa-file-lines"></i>
-                <span>Reports</span>
-            </a>
-
-            <a href="#" class="menu-item" data-section="settings">
-                <i class="fa-solid fa-gear"></i>
-                <span>Settings</span>
-            </a>
-
-        </nav>
-
-        <div class="sidebar-footer">
-            <div class="support-box">
-                <i class="fa-solid fa-circle-question"></i>
-
-                <div>
-                    <strong>Need Help?</strong>
-                    <small>Contact HR Support</small>
+                <div class="brand-logo">
+                    <div class="logo-person logo-person-one"></div>
+                    <div class="logo-person logo-person-two"></div>
+                    <div class="logo-orbit"></div>
                 </div>
+
+                <div class="brand-text">
+                    <h2>HRMS<span>360</span></h2>
+                    <small>People • Processes • Progress</small>
+                </div>
+
             </div>
-        </div>
-
-    </aside>
 
 
-    <!-- ================= MAIN AREA ================= -->
+            <!-- Navigation -->
 
-    <main class="main-content">
+            <nav class="sidebar-navigation">
 
-        <!-- TOP HEADER -->
+                <p class="nav-heading">MAIN</p>
 
-        <header class="topbar">
-
-            <div class="topbar-left">
-
-                <button class="mobile-menu" id="mobileMenu">
-                    <i class="fa-solid fa-bars"></i>
+                <button class="nav-item active" data-page="dashboard">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
                 </button>
 
-                <div>
-                    <h1 id="pageTitle">Dashboard</h1>
-                    <p id="pageSubtitle">
-                        Welcome back! Here's what's happening today.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="topbar-right">
-
-                <div class="search-box">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text"
-                           id="globalSearch"
-                           placeholder="Search employees...">
-                </div>
-
-                <button class="icon-button notification-btn">
-                    <i class="fa-regular fa-bell"></i>
-                    <span class="notification-dot"></span>
+                <button class="nav-item" data-page="employees">
+                    <span class="nav-icon">♙</span>
+                    <span>Employees</span>
                 </button>
 
-                <div class="profile">
+                <button class="nav-item" data-page="attendance">
+                    <span class="nav-icon">◷</span>
+                    <span>Attendance</span>
+                </button>
 
-                    <div class="profile-avatar">
-                        AD
-                    </div>
+                <button class="nav-item" data-page="leave">
+                    <span class="nav-icon">☑</span>
+                    <span>Leave</span>
+                </button>
 
-                    <div class="profile-info">
-                        <strong>Admin</strong>
-                        <small>HR Administrator</small>
-                    </div>
+                <p class="nav-heading">PEOPLE</p>
 
-                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+                <button class="nav-item" data-page="recruitment">
+                    <span class="nav-icon">♧</span>
+                    <span>Recruitment</span>
+                </button>
 
-                </div>
+                <button class="nav-item" data-page="onboarding">
+                    <span class="nav-icon">➜</span>
+                    <span>Onboarding</span>
+                </button>
 
-            </div>
+                <button class="nav-item" data-page="performance">
+                    <span class="nav-icon">★</span>
+                    <span>Performance</span>
+                </button>
 
-        </header>
+                <p class="nav-heading">FINANCE</p>
+
+                <button class="nav-item" data-page="payroll">
+                    <span class="nav-icon">₹</span>
+                    <span>Payroll</span>
+                </button>
+
+                <button class="nav-item" data-page="expenses">
+                    <span class="nav-icon">▣</span>
+                    <span>Expenses</span>
+                </button>
+
+                <p class="nav-heading">INSIGHTS</p>
+
+                <button class="nav-item" data-page="reports">
+                    <span class="nav-icon">▥</span>
+                    <span>Reports</span>
+                </button>
+
+                <button class="nav-item" data-page="settings">
+                    <span class="nav-icon">⚙</span>
+                    <span>Settings</span>
+                </button>
+
+            </nav>
 
 
-        <!-- ================= CONTENT ================= -->
+            <!-- Sidebar Footer -->
 
-        <div class="content">
+            <div class="sidebar-footer">
 
-
-            <!-- ================================================= -->
-            <!-- DASHBOARD -->
-            <!-- ================================================= -->
-
-            <section class="page-section active-section" id="dashboard">
-
-                <div class="welcome-banner">
+                <div class="help-box">
+                    <div class="help-icon">?</div>
 
                     <div>
-                        <span class="welcome-label">HRMS OVERVIEW</span>
+                        <strong>Need Help?</strong>
+                        <p>Contact HR Support</p>
+                    </div>
+                </div>
 
-                        <h2>
-                            Good Morning, Admin 👋
-                        </h2>
+            </div>
 
-                        <p>
-                            Here's an overview of your organization's workforce.
+        </aside>
+
+
+        <!-- ============================= -->
+        <!-- MAIN AREA -->
+        <!-- ============================= -->
+
+        <main class="main-content">
+
+            <!-- TOP HEADER -->
+
+            <header class="top-header">
+
+                <div class="header-left">
+
+                    <button class="mobile-menu" id="mobileMenu">
+                        ☰
+                    </button>
+
+                    <div>
+                        <h1 id="pageTitle">Dashboard</h1>
+                        <p id="pageSubtitle">
+                            Welcome to HRMS360
                         </p>
                     </div>
 
-                    <div class="welcome-date">
-                        <i class="fa-regular fa-calendar"></i>
-                        <span id="currentDate"></span>
-                    </div>
-
                 </div>
 
 
-                <!-- STAT CARDS -->
+                <div class="header-right">
 
-                <div class="stats-grid">
+                    <button class="header-button" id="notificationButton">
+                        🔔
+                        <span class="notification-dot"></span>
+                    </button>
 
-                    <div class="stat-card">
+                    <div class="profile-area">
 
-                        <div class="stat-icon blue">
-                            <i class="fa-solid fa-users"></i>
+                        <div class="profile-avatar">
+                            ML
                         </div>
 
-                        <div class="stat-content">
-                            <span>Total Employees</span>
-                            <h3 id="totalEmployees">248</h3>
-
-                            <small class="positive">
-                                <i class="fa-solid fa-arrow-up"></i>
-                                8.2% this month
-                            </small>
+                        <div class="profile-details">
+                            <strong>Merinda Lanka</strong>
+                            <span>HR Administrator</span>
                         </div>
 
-                    </div>
-
-
-                    <div class="stat-card">
-
-                        <div class="stat-icon green">
-                            <i class="fa-solid fa-user-check"></i>
-                        </div>
-
-                        <div class="stat-content">
-                            <span>Present Today</span>
-                            <h3>221</h3>
-
-                            <small class="positive">
-                                89.1% attendance
-                            </small>
-                        </div>
-
-                    </div>
-
-
-                    <div class="stat-card">
-
-                        <div class="stat-icon orange">
-                            <i class="fa-solid fa-person-walking-arrow-right"></i>
-                        </div>
-
-                        <div class="stat-content">
-                            <span>On Leave</span>
-                            <h3>12</h3>
-
-                            <small class="neutral">
-                                4.8% of workforce
-                            </small>
-                        </div>
-
-                    </div>
-
-
-                    <div class="stat-card">
-
-                        <div class="stat-icon purple">
-                            <i class="fa-solid fa-user-plus"></i>
-                        </div>
-
-                        <div class="stat-content">
-                            <span>New Joiners</span>
-                            <h3>5</h3>
-
-                            <small class="positive">
-                                This month
-                            </small>
-                        </div>
+                        <span class="profile-arrow">⌄</span>
 
                     </div>
 
                 </div>
 
-
-                <!-- DASHBOARD GRID -->
-
-                <div class="dashboard-grid">
+            </header>
 
 
-                    <!-- ATTENDANCE CHART -->
+            <!-- ============================= -->
+            <!-- PAGE CONTENT -->
+            <!-- ============================= -->
 
-                    <div class="dashboard-card chart-card">
-
-                        <div class="card-header">
-
-                            <div>
-                                <h3>Attendance Overview</h3>
-                                <p>Monthly attendance statistics</p>
-                            </div>
-
-                            <select id="attendancePeriod">
-                                <option>This Year</option>
-                                <option>Last 6 Months</option>
-                                <option>This Month</option>
-                            </select>
-
-                        </div>
-
-                        <div class="chart-container">
-                            <canvas id="attendanceChart"></canvas>
-                        </div>
-
-                    </div>
+            <div class="page-container">
 
 
-                    <!-- DEPARTMENT -->
+                <!-- ============================= -->
+                <!-- DASHBOARD -->
+                <!-- ============================= -->
 
-                    <div class="dashboard-card">
+                <section class="page-section active" id="dashboard">
 
-                        <div class="card-header">
-
-                            <div>
-                                <h3>Employees by Department</h3>
-                                <p>Current workforce distribution</p>
-                            </div>
-
-                        </div>
-
-                        <div class="department-list">
-
-                            <div class="department-row">
-                                <div class="department-name">
-                                    <span class="department-dot sales"></span>
-                                    Sales
-                                </div>
-
-                                <strong>48</strong>
-                            </div>
-
-                            <div class="progress">
-                                <div style="width:72%"></div>
-                            </div>
-
-
-                            <div class="department-row">
-                                <div class="department-name">
-                                    <span class="department-dot it"></span>
-                                    IT
-                                </div>
-
-                                <strong>62</strong>
-                            </div>
-
-                            <div class="progress">
-                                <div style="width:88%"></div>
-                            </div>
-
-
-                            <div class="department-row">
-                                <div class="department-name">
-                                    <span class="department-dot hr"></span>
-                                    Human Resources
-                                </div>
-
-                                <strong>24</strong>
-                            </div>
-
-                            <div class="progress">
-                                <div style="width:38%"></div>
-                            </div>
-
-
-                            <div class="department-row">
-                                <div class="department-name">
-                                    <span class="department-dot finance"></span>
-                                    Finance
-                                </div>
-
-                                <strong>31</strong>
-                            </div>
-
-                            <div class="progress">
-                                <div style="width:48%"></div>
-                            </div>
-
-
-                            <div class="department-row">
-                                <div class="department-name">
-                                    <span class="department-dot operations"></span>
-                                    Operations
-                                </div>
-
-                                <strong>83</strong>
-                            </div>
-
-                            <div class="progress">
-                                <div style="width:95%"></div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- RECENT ACTIVITIES -->
-
-                <div class="dashboard-card">
-
-                    <div class="card-header">
+                    <div class="welcome-banner">
 
                         <div>
-                            <h3>Recent Leave Requests</h3>
-                            <p>Latest employee leave applications</p>
+                            <span class="welcome-label">
+                                GOOD AFTERNOON 👋
+                            </span>
+
+                            <h2>
+                                Welcome back, Merinda!
+                            </h2>
+
+                            <p>
+                                Here's what's happening across your organization today.
+                            </p>
                         </div>
 
-                        <button class="text-button" data-section-link="leave">
-                            View All
-                            <i class="fa-solid fa-arrow-right"></i>
+                        <div class="banner-date">
+                            <strong id="currentDate"></strong>
+                            <span id="currentTime"></span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- STAT CARDS -->
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon employees-icon">
+                                ♙
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Total Employees</span>
+                                <strong>248</strong>
+                                <small class="positive">
+                                    ↑ 8.2% from last month
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon attendance-icon">
+                                ◷
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Present Today</span>
+                                <strong>219</strong>
+                                <small class="positive">
+                                    88.3% attendance
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon leave-icon">
+                                ☑
+                            </div>
+
+                            <div class="stat-content">
+                                <span>On Leave</span>
+                                <strong>18</strong>
+                                <small>
+                                    7.3% of employees
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon recruitment-icon">
+                                ♧
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Open Positions</span>
+                                <strong>12</strong>
+                                <small class="positive">
+                                    4 new this week
+                                </small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DASHBOARD GRID -->
+
+                    <div class="dashboard-grid">
+
+
+                        <!-- Attendance -->
+
+                        <div class="dashboard-card attendance-card">
+
+                            <div class="card-header">
+
+                                <div>
+                                    <h3>Today's Attendance</h3>
+                                    <p>Employee attendance overview</p>
+                                </div>
+
+                                <button
+                                    class="text-button"
+                                    data-page-link="attendance">
+                                    View Details →
+                                </button>
+
+                            </div>
+
+
+                            <div class="attendance-summary">
+
+                                <div class="attendance-circle">
+                                    <div>
+                                        <strong>88%</strong>
+                                        <span>Present</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="attendance-list">
+
+                                    <div>
+                                        <span class="status-dot present"></span>
+                                        <span>Present</span>
+                                        <strong>219</strong>
+                                    </div>
+
+                                    <div>
+                                        <span class="status-dot absent"></span>
+                                        <span>Absent</span>
+                                        <strong>11</strong>
+                                    </div>
+
+                                    <div>
+                                        <span class="status-dot leave"></span>
+                                        <span>On Leave</span>
+                                        <strong>18</strong>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Leave Requests -->
+
+                        <div class="dashboard-card">
+
+                            <div class="card-header">
+
+                                <div>
+                                    <h3>Pending Leave Requests</h3>
+                                    <p>Requires your attention</p>
+                                </div>
+
+                                <button
+                                    class="text-button"
+                                    data-page-link="leave">
+                                    View All →
+                                </button>
+
+                            </div>
+
+
+                            <div class="request-list">
+
+                                <div class="request-item">
+
+                                    <div class="employee-mini-avatar">
+                                        AS
+                                    </div>
+
+                                    <div class="request-info">
+                                        <strong>Ananya Sharma</strong>
+                                        <span>Casual Leave • 2 days</span>
+                                    </div>
+
+                                    <span class="request-status pending">
+                                        Pending
+                                    </span>
+
+                                </div>
+
+
+                                <div class="request-item">
+
+                                    <div class="employee-mini-avatar">
+                                        RK
+                                    </div>
+
+                                    <div class="request-info">
+                                        <strong>Rahul Kumar</strong>
+                                        <span>Sick Leave • 1 day</span>
+                                    </div>
+
+                                    <span class="request-status pending">
+                                        Pending
+                                    </span>
+
+                                </div>
+
+
+                                <div class="request-item">
+
+                                    <div class="employee-mini-avatar">
+                                        PS
+                                    </div>
+
+                                    <div class="request-info">
+                                        <strong>Priya Singh</strong>
+                                        <span>Earned Leave • 3 days</span>
+                                    </div>
+
+                                    <span class="request-status pending">
+                                        Pending
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUICK ACTIONS -->
+
+                    <div class="dashboard-card quick-actions-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <h3>Quick Actions</h3>
+                                <p>Frequently used HR functions</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+                            <button class="quick-action" data-page-link="employees">
+                                <span>＋</span>
+                                <strong>Add Employee</strong>
+                                <small>Create a new employee record</small>
+                            </button>
+
+                            <button class="quick-action" data-page-link="attendance">
+                                <span>◷</span>
+                                <strong>Attendance</strong>
+                                <small>View today's attendance</small>
+                            </button>
+
+                            <button class="quick-action" data-page-link="leave">
+                                <span>☑</span>
+                                <strong>Leave Requests</strong>
+                                <small>Review pending requests</small>
+                            </button>
+
+                            <button class="quick-action" data-page-link="reports">
+                                <span>▥</span>
+                                <strong>Generate Report</strong>
+                                <small>Create an HR report</small>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ============================= -->
+                <!-- EMPLOYEES -->
+                <!-- ============================= -->
+
+                <section class="page-section" id="employees">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Employees</h2>
+                            <p>Manage your organization's employees.</p>
+                        </div>
+
+                        <button class="primary-button" id="addEmployeeButton">
+                            + Add Employee
                         </button>
 
                     </div>
 
 
-                    <div class="table-wrapper">
+                    <div class="toolbar">
 
-                        <table>
+                        <input
+                            type="text"
+                            id="employeeSearch"
+                            placeholder="Search employees...">
 
-                            <thead>
-                            <tr>
-                                <th>Employee</th>
-                                <th>Leave Type</th>
-                                <th>Duration</th>
-                                <th>Applied On</th>
-                                <th>Status</th>
-                            </tr>
-                            </thead>
+                        <select>
+                            <option>All Departments</option>
+                            <option>Engineering</option>
+                            <option>Sales</option>
+                            <option>Human Resources</option>
+                            <option>Finance</option>
+                        </select>
 
-                            <tbody>
-
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">RS</div>
-                                        <div>
-                                            <strong>Rahul Sharma</strong>
-                                            <small>EMP001</small>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>Casual Leave</td>
-                                <td>2 Days</td>
-                                <td>28 Sep 2026</td>
-
-                                <td>
-                                    <span class="status pending">
-                                        Pending
-                                    </span>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">PN</div>
-
-                                        <div>
-                                            <strong>Priya Nair</strong>
-                                            <small>EMP002</small>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>Earned Leave</td>
-                                <td>3 Days</td>
-                                <td>27 Sep 2026</td>
-
-                                <td>
-                                    <span class="status approved">
-                                        Approved
-                                    </span>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">AK</div>
-
-                                        <div>
-                                            <strong>Arjun Kumar</strong>
-                                            <small>EMP003</small>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>Sick Leave</td>
-                                <td>1 Day</td>
-                                <td>26 Sep 2026</td>
-
-                                <td>
-                                    <span class="status approved">
-                                        Approved
-                                    </span>
-                                </td>
-                            </tr>
-
-                            </tbody>
-
-                        </table>
+                        <select>
+                            <option>All Status</option>
+                            <option>Active</option>
+                            <option>Inactive</option>
+                        </select>
 
                     </div>
 
-                </div>
 
-            </section>
-
-
-            <!-- ================================================= -->
-            <!-- EMPLOYEES -->
-            <!-- ================================================= -->
-
-            <section class="page-section" id="employees">
-
-                <div class="section-toolbar">
-
-                    <div>
-                        <h2>Employee Directory</h2>
-                        <p>Manage your organization's employees.</p>
-                    </div>
-
-                    <button class="primary-button" id="addEmployeeBtn">
-                        <i class="fa-solid fa-plus"></i>
-                        Add Employee
-                    </button>
-
-                </div>
-
-
-                <div class="filter-bar">
-
-                    <div class="table-search">
-                        <i class="fa-solid fa-search"></i>
-                        <input type="text"
-                               id="employeeSearch"
-                               placeholder="Search employee...">
-                    </div>
-
-                    <select id="departmentFilter">
-                        <option value="">All Departments</option>
-                        <option>Sales</option>
-                        <option>IT</option>
-                        <option>Human Resources</option>
-                        <option>Finance</option>
-                        <option>Operations</option>
-                    </select>
-
-                    <select>
-                        <option>All Status</option>
-                        <option>Active</option>
-                        <option>Inactive</option>
-                    </select>
-
-                </div>
-
-
-                <div class="dashboard-card">
-
-                    <div class="table-wrapper">
+                    <div class="table-card">
 
                         <table id="employeeTable">
 
                             <thead>
-                            <tr>
-                                <th>Employee</th>
-                                <th>Department</th>
-                                <th>Designation</th>
-                                <th>Joining Date</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
-
-                            <tbody id="employeeTableBody">
-
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">RS</div>
-                                        <div>
-                                            <strong>Rahul Sharma</strong>
-                                            <small>EMP001</small>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>Sales</td>
-                                <td>Sales Manager</td>
-                                <td>12 Jan 2024</td>
-
-                                <td>
-                                    <span class="status active">
-                                        Active
-                                    </span>
-                                </td>
-
-                                <td>
-                                    <button class="action-button">
-                                        <i class="fa-solid fa-ellipsis"></i>
-                                    </button>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">PN</div>
-                                        <div>
-                                            <strong>Priya Nair</strong>
-                                            <small>EMP002</small>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>Human Resources</td>
-                                <td>HR Executive</td>
-                                <td>20 Mar 2023</td>
-
-                                <td>
-                                    <span class="status active">
-                                        Active
-                                    </span>
-                                </td>
-
-                                <td>
-                                    <button class="action-button">
-                                        <i class="fa-solid fa-ellipsis"></i>
-                                    </button>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">AK</div>
-                                        <div>
-                                            <strong>Arjun Kumar</strong>
-                                            <small>EMP003</small>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>IT</td>
-                                <td>Software Developer</td>
-                                <td>05 Jun 2024</td>
-
-                                <td>
-                                    <span class="status active">
-                                        Active
-                                    </span>
-                                </td>
-
-                                <td>
-                                    <button class="action-button">
-                                        <i class="fa-solid fa-ellipsis"></i>
-                                    </button>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">SM</div>
-                                        <div>
-                                            <strong>Sneha Menon</strong>
-                                            <small>EMP004</small>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>Finance</td>
-                                <td>Finance Analyst</td>
-                                <td>18 Aug 2022</td>
-
-                                <td>
-                                    <span class="status active">
-                                        Active
-                                    </span>
-                                </td>
-
-                                <td>
-                                    <button class="action-button">
-                                        <i class="fa-solid fa-ellipsis"></i>
-                                    </button>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">VK</div>
-                                        <div>
-                                            <strong>Vikram Kumar</strong>
-                                            <small>EMP005</small>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>Operations</td>
-                                <td>Operations Executive</td>
-                                <td>02 Feb 2025</td>
-
-                                <td>
-                                    <span class="status active">
-                                        Active
-                                    </span>
-                                </td>
-
-                                <td>
-                                    <button class="action-button">
-                                        <i class="fa-solid fa-ellipsis"></i>
-                                    </button>
-                                </td>
-                            </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================================================= -->
-            <!-- ATTENDANCE -->
-            <!-- ================================================= -->
-
-            <section class="page-section" id="attendance">
-
-                <div class="section-toolbar">
-
-                    <div>
-                        <h2>Attendance</h2>
-                        <p>Track employee attendance and working hours.</p>
-                    </div>
-
-                    <button class="primary-button">
-                        <i class="fa-solid fa-download"></i>
-                        Export Report
-                    </button>
-
-                </div>
-
-
-                <div class="mini-stats">
-
-                    <div class="mini-stat">
-                        <span>Present</span>
-                        <strong>221</strong>
-                        <small>89.1%</small>
-                    </div>
-
-                    <div class="mini-stat">
-                        <span>Absent</span>
-                        <strong>9</strong>
-                        <small>3.6%</small>
-                    </div>
-
-                    <div class="mini-stat">
-                        <span>Late</span>
-                        <strong>6</strong>
-                        <small>2.4%</small>
-                    </div>
-
-                    <div class="mini-stat">
-                        <span>On Leave</span>
-                        <strong>12</strong>
-                        <small>4.8%</small>
-                    </div>
-
-                </div>
-
-
-                <div class="dashboard-card">
-
-                    <div class="filter-bar">
-
-                        <input type="date" id="attendanceDate">
-
-                        <select>
-                            <option>All Departments</option>
-                            <option>Sales</option>
-                            <option>IT</option>
-                            <option>HR</option>
-                        </select>
-
-                    </div>
-
-
-                    <div class="table-wrapper">
-
-                        <table>
-
-                            <thead>
-                            <tr>
-                                <th>Employee</th>
-                                <th>Check In</th>
-                                <th>Check Out</th>
-                                <th>Working Hours</th>
-                                <th>Status</th>
-                            </tr>
+                                <tr>
+                                    <th>Employee</th>
+                                    <th>Employee ID</th>
+                                    <th>Department</th>
+                                    <th>Designation</th>
+                                    <th>Status</th>
+                                </tr>
                             </thead>
 
                             <tbody>
 
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">RS</div>
-                                        <strong>Rahul Sharma</strong>
-                                    </div>
-                                </td>
+                                <tr>
+                                    <td>Merinda Lanka</td>
+                                    <td>EMP001</td>
+                                    <td>HR</td>
+                                    <td>HR Administrator</td>
+                                    <td><span class="badge active-badge">Active</span></td>
+                                </tr>
 
-                                <td>09:12 AM</td>
-                                <td>06:15 PM</td>
-                                <td>8h 45m</td>
+                                <tr>
+                                    <td>Ananya Sharma</td>
+                                    <td>EMP002</td>
+                                    <td>Engineering</td>
+                                    <td>Software Engineer</td>
+                                    <td><span class="badge active-badge">Active</span></td>
+                                </tr>
 
-                                <td>
-                                    <span class="status active">
-                                        Present
-                                    </span>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>Rahul Kumar</td>
+                                    <td>EMP003</td>
+                                    <td>Sales</td>
+                                    <td>Sales Executive</td>
+                                    <td><span class="badge active-badge">Active</span></td>
+                                </tr>
 
-
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">PN</div>
-                                        <strong>Priya Nair</strong>
-                                    </div>
-                                </td>
-
-                                <td>09:05 AM</td>
-                                <td>06:00 PM</td>
-                                <td>8h 55m</td>
-
-                                <td>
-                                    <span class="status active">
-                                        Present
-                                    </span>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">AK</div>
-                                        <strong>Arjun Kumar</strong>
-                                    </div>
-                                </td>
-
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-
-                                <td>
-                                    <span class="status pending">
-                                        On Leave
-                                    </span>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>Priya Singh</td>
+                                    <td>EMP004</td>
+                                    <td>Finance</td>
+                                    <td>Accountant</td>
+                                    <td><span class="badge active-badge">Active</span></td>
+                                </tr>
 
                             </tbody>
 
@@ -900,147 +581,93 @@
 
                     </div>
 
-                </div>
-
-            </section>
+                </section>
 
 
-            <!-- ================================================= -->
-            <!-- LEAVE -->
-            <!-- ================================================= -->
+                <!-- ============================= -->
+                <!-- ATTENDANCE -->
+                <!-- ============================= -->
 
-            <section class="page-section" id="leave">
+                <section class="page-section" id="attendance">
 
-                <div class="section-toolbar">
-
-                    <div>
-                        <h2>Leave Management</h2>
-                        <p>Manage employee leave requests and balances.</p>
-                    </div>
-
-                    <button class="primary-button" id="applyLeaveBtn">
-                        <i class="fa-solid fa-plus"></i>
-                        Apply Leave
-                    </button>
-
-                </div>
-
-
-                <div class="leave-cards">
-
-                    <div class="leave-card blue-border">
-                        <span>Casual Leave</span>
-                        <strong>8</strong>
-                        <small>Days Available</small>
-                    </div>
-
-                    <div class="leave-card green-border">
-                        <span>Sick Leave</span>
-                        <strong>6</strong>
-                        <small>Days Available</small>
-                    </div>
-
-                    <div class="leave-card purple-border">
-                        <span>Earned Leave</span>
-                        <strong>12</strong>
-                        <small>Days Available</small>
-                    </div>
-
-                    <div class="leave-card orange-border">
-                        <span>Used Leave</span>
-                        <strong>9</strong>
-                        <small>Days This Year</small>
-                    </div>
-
-                </div>
-
-
-                <div class="dashboard-card">
-
-                    <div class="card-header">
+                    <div class="section-heading">
 
                         <div>
-                            <h3>Leave Requests</h3>
-                            <p>Review employee leave applications.</p>
+                            <h2>Attendance</h2>
+                            <p>Monitor daily employee attendance.</p>
                         </div>
 
-                        <select>
-                            <option>All Requests</option>
-                            <option>Pending</option>
-                            <option>Approved</option>
-                            <option>Rejected</option>
-                        </select>
+                        <button class="primary-button">
+                            Export Report
+                        </button>
 
                     </div>
 
 
-                    <div class="table-wrapper">
+                    <div class="attendance-cards">
+
+                        <div class="mini-stat">
+                            <span>Present</span>
+                            <strong>219</strong>
+                        </div>
+
+                        <div class="mini-stat">
+                            <span>Absent</span>
+                            <strong>11</strong>
+                        </div>
+
+                        <div class="mini-stat">
+                            <span>On Leave</span>
+                            <strong>18</strong>
+                        </div>
+
+                        <div class="mini-stat">
+                            <span>Late</span>
+                            <strong>7</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-card">
 
                         <table>
 
                             <thead>
-                            <tr>
-                                <th>Employee</th>
-                                <th>Leave Type</th>
-                                <th>Dates</th>
-                                <th>Days</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
+                                <tr>
+                                    <th>Employee</th>
+                                    <th>Date</th>
+                                    <th>Check In</th>
+                                    <th>Check Out</th>
+                                    <th>Status</th>
+                                </tr>
                             </thead>
 
                             <tbody>
 
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">RS</div>
-                                        <strong>Rahul Sharma</strong>
-                                    </div>
-                                </td>
+                                <tr>
+                                    <td>Ananya Sharma</td>
+                                    <td>30 Sep 2026</td>
+                                    <td>09:02 AM</td>
+                                    <td>06:10 PM</td>
+                                    <td><span class="badge active-badge">Present</span></td>
+                                </tr>
 
-                                <td>Casual Leave</td>
-                                <td>05 - 06 Oct</td>
-                                <td>2</td>
+                                <tr>
+                                    <td>Rahul Kumar</td>
+                                    <td>30 Sep 2026</td>
+                                    <td>09:18 AM</td>
+                                    <td>06:02 PM</td>
+                                    <td><span class="badge late-badge">Late</span></td>
+                                </tr>
 
-                                <td>
-                                    <span class="status pending">
-                                        Pending
-                                    </span>
-                                </td>
-
-                                <td>
-                                    <button class="small-button approve">
-                                        Approve
-                                    </button>
-
-                                    <button class="small-button reject">
-                                        Reject
-                                    </button>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <div class="employee-cell">
-                                        <div class="table-avatar">PN</div>
-                                        <strong>Priya Nair</strong>
-                                    </div>
-                                </td>
-
-                                <td>Earned Leave</td>
-                                <td>12 - 14 Oct</td>
-                                <td>3</td>
-
-                                <td>
-                                    <span class="status approved">
-                                        Approved
-                                    </span>
-                                </td>
-
-                                <td>—</td>
-                            </tr>
+                                <tr>
+                                    <td>Priya Singh</td>
+                                    <td>30 Sep 2026</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td><span class="badge leave-badge">Leave</span></td>
+                                </tr>
 
                             </tbody>
 
@@ -1048,920 +675,550 @@
 
                     </div>
 
-                </div>
-
-            </section>
+                </section>
 
 
-            <!-- ================================================= -->
-            <!-- RECRUITMENT -->
-            <!-- ================================================= -->
+                <!-- ============================= -->
+                <!-- LEAVE -->
+                <!-- ============================= -->
 
-            <section class="page-section" id="recruitment">
+                <section class="page-section" id="leave">
 
-                <div class="section-toolbar">
+                    <div class="section-heading">
 
-                    <div>
-                        <h2>Recruitment</h2>
-                        <p>Manage job openings and candidates.</p>
-                    </div>
-
-                    <button class="primary-button">
-                        <i class="fa-solid fa-plus"></i>
-                        Create Job
-                    </button>
-
-                </div>
-
-
-                <div class="job-grid">
-
-                    <div class="job-card">
-
-                        <div class="job-icon">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-
-                        <h3>Salesforce Developer</h3>
-
-                        <p>IT Department</p>
-
-                        <div class="job-details">
-                            <span>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Bangalore
-                            </span>
-
-                            <span>
-                                <i class="fa-solid fa-user-group"></i>
-                                15 Applicants
-                            </span>
-                        </div>
-
-                        <button class="outline-button">
-                            View Applications
-                        </button>
-
-                    </div>
-
-
-                    <div class="job-card">
-
-                        <div class="job-icon">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-
-                        <h3>Sales Executive</h3>
-
-                        <p>Sales Department</p>
-
-                        <div class="job-details">
-                            <span>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Mumbai
-                            </span>
-
-                            <span>
-                                <i class="fa-solid fa-user-group"></i>
-                                8 Applicants
-                            </span>
-                        </div>
-
-                        <button class="outline-button">
-                            View Applications
-                        </button>
-
-                    </div>
-
-
-                    <div class="job-card">
-
-                        <div class="job-icon">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-
-                        <h3>HR Executive</h3>
-
-                        <p>Human Resources</p>
-
-                        <div class="job-details">
-                            <span>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Bangalore
-                            </span>
-
-                            <span>
-                                <i class="fa-solid fa-user-group"></i>
-                                5 Applicants
-                            </span>
-                        </div>
-
-                        <button class="outline-button">
-                            View Applications
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================================================= -->
-            <!-- ONBOARDING -->
-            <!-- ================================================= -->
-
-            <section class="page-section" id="onboarding">
-
-                <div class="section-toolbar">
-
-                    <div>
-                        <h2>Employee Onboarding</h2>
-                        <p>Track onboarding activities for new employees.</p>
-                    </div>
-
-                    <button class="primary-button">
-                        <i class="fa-solid fa-plus"></i>
-                        Start Onboarding
-                    </button>
-
-                </div>
-
-
-                <div class="dashboard-card">
-
-                    <div class="card-header">
                         <div>
-                            <h3>New Joiners</h3>
-                            <p>Current onboarding progress</p>
+                            <h2>Leave Management</h2>
+                            <p>Manage employee leave requests.</p>
                         </div>
+
+                        <button class="primary-button">
+                            + Apply Leave
+                        </button>
+
                     </div>
 
 
-                    <div class="onboarding-list">
+                    <div class="leave-grid">
 
-                        <div class="onboarding-item">
+                        <div class="leave-card">
+                            <span>Casual Leave</span>
+                            <strong>8</strong>
+                            <small>Days remaining</small>
+                        </div>
 
-                            <div class="table-avatar">AM</div>
+                        <div class="leave-card">
+                            <span>Sick Leave</span>
+                            <strong>6</strong>
+                            <small>Days remaining</small>
+                        </div>
 
-                            <div class="onboarding-info">
-                                <strong>Ananya Menon</strong>
-                                <small>Salesforce Developer</small>
+                        <div class="leave-card">
+                            <span>Earned Leave</span>
+                            <strong>12</strong>
+                            <small>Days remaining</small>
+                        </div>
 
-                                <div class="onboarding-progress">
-                                    <div style="width:80%"></div>
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+                            <div>
+                                <h3>Leave Requests</h3>
+                                <p>Recent employee requests</p>
+                            </div>
+                        </div>
+
+                        <div class="request-list">
+
+                            <div class="request-item">
+                                <div class="employee-mini-avatar">AS</div>
+                                <div class="request-info">
+                                    <strong>Ananya Sharma</strong>
+                                    <span>Casual Leave • 2 days</span>
                                 </div>
-
-                                <span>80% completed</span>
+                                <button class="approve-button">Approve</button>
+                                <button class="reject-button">Reject</button>
                             </div>
 
-                            <button class="outline-button">
-                                View
+                            <div class="request-item">
+                                <div class="employee-mini-avatar">RK</div>
+                                <div class="request-info">
+                                    <strong>Rahul Kumar</strong>
+                                    <span>Sick Leave • 1 day</span>
+                                </div>
+                                <button class="approve-button">Approve</button>
+                                <button class="reject-button">Reject</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ============================= -->
+                <!-- RECRUITMENT -->
+                <!-- ============================= -->
+
+                <section class="page-section" id="recruitment">
+
+                    <div class="section-heading">
+                        <div>
+                            <h2>Recruitment</h2>
+                            <p>Manage your recruitment pipeline.</p>
+                        </div>
+
+                        <button class="primary-button">
+                            + New Job Opening
+                        </button>
+                    </div>
+
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+                            <div class="stat-icon recruitment-icon">♧</div>
+                            <div class="stat-content">
+                                <span>Open Positions</span>
+                                <strong>12</strong>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon employees-icon">♙</div>
+                            <div class="stat-content">
+                                <span>Total Applicants</span>
+                                <strong>186</strong>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon attendance-icon">★</div>
+                            <div class="stat-content">
+                                <span>Interviews</span>
+                                <strong>24</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-card">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Position</th>
+                                    <th>Department</th>
+                                    <th>Applicants</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Sales Executive</td>
+                                    <td>Sales</td>
+                                    <td>42</td>
+                                    <td><span class="badge active-badge">Open</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Software Developer</td>
+                                    <td>Engineering</td>
+                                    <td>68</td>
+                                    <td><span class="badge active-badge">Open</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>HR Executive</td>
+                                    <td>Human Resources</td>
+                                    <td>31</td>
+                                    <td><span class="badge pending-badge">Interview</span></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ============================= -->
+                <!-- ONBOARDING -->
+                <!-- ============================= -->
+
+                <section class="page-section" id="onboarding">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Onboarding</h2>
+                            <p>Track new employee onboarding.</p>
+                        </div>
+
+                        <button class="primary-button">
+                            + Start Onboarding
+                        </button>
+
+                    </div>
+
+
+                    <div class="onboarding-steps">
+
+                        <div class="onboarding-step completed">
+                            <span>✓</span>
+                            <strong>Documents</strong>
+                            <small>Completed</small>
+                        </div>
+
+                        <div class="onboarding-step completed">
+                            <span>✓</span>
+                            <strong>Verification</strong>
+                            <small>Completed</small>
+                        </div>
+
+                        <div class="onboarding-step current">
+                            <span>3</span>
+                            <strong>IT Setup</strong>
+                            <small>In Progress</small>
+                        </div>
+
+                        <div class="onboarding-step">
+                            <span>4</span>
+                            <strong>Orientation</strong>
+                            <small>Pending</small>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ============================= -->
+                <!-- PERFORMANCE -->
+                <!-- ============================= -->
+
+                <section class="page-section" id="performance">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Performance</h2>
+                            <p>Track employee performance and reviews.</p>
+                        </div>
+
+                        <button class="primary-button">
+                            Start Review Cycle
+                        </button>
+
+                    </div>
+
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+                            <div class="stat-icon employees-icon">★</div>
+                            <div class="stat-content">
+                                <span>Reviews Completed</span>
+                                <strong>192</strong>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon attendance-icon">◷</div>
+                            <div class="stat-content">
+                                <span>Pending Reviews</span>
+                                <strong>56</strong>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon recruitment-icon">↑</div>
+                            <div class="stat-content">
+                                <span>Average Score</span>
+                                <strong>8.4</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ============================= -->
+                <!-- PAYROLL -->
+                <!-- ============================= -->
+
+                <section class="page-section" id="payroll">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Payroll</h2>
+                            <p>Manage employee payroll information.</p>
+                        </div>
+
+                        <button class="primary-button">
+                            Run Payroll
+                        </button>
+
+                    </div>
+
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+                            <div class="stat-icon employees-icon">₹</div>
+                            <div class="stat-content">
+                                <span>Monthly Payroll</span>
+                                <strong>₹42.8L</strong>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon attendance-icon">♙</div>
+                            <div class="stat-content">
+                                <span>Employees</span>
+                                <strong>248</strong>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon recruitment-icon">✓</div>
+                            <div class="stat-content">
+                                <span>Payroll Status</span>
+                                <strong>Ready</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-card empty-card">
+
+                        <div class="empty-icon">₹</div>
+
+                        <h3>Payroll Workspace</h3>
+
+                        <p>
+                            Payroll processing, salary structures,
+                            deductions and payslips can be added here.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ============================= -->
+                <!-- EXPENSES -->
+                <!-- ============================= -->
+
+                <section class="page-section" id="expenses">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Expenses</h2>
+                            <p>Manage employee expense claims.</p>
+                        </div>
+
+                        <button class="primary-button">
+                            + New Expense
+                        </button>
+
+                    </div>
+
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+                            <div class="stat-icon employees-icon">₹</div>
+                            <div class="stat-content">
+                                <span>Total Expenses</span>
+                                <strong>₹2.4L</strong>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon leave-icon">☑</div>
+                            <div class="stat-content">
+                                <span>Pending Claims</span>
+                                <strong>17</strong>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon attendance-icon">✓</div>
+                            <div class="stat-content">
+                                <span>Approved</span>
+                                <strong>64</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ============================= -->
+                <!-- REPORTS -->
+                <!-- ============================= -->
+
+                <section class="page-section" id="reports">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Reports & Analytics</h2>
+                            <p>View HR insights and organizational reports.</p>
+                        </div>
+
+                        <button class="primary-button" id="reportButton">
+                            Generate Report
+                        </button>
+
+                    </div>
+
+
+                    <div class="report-grid">
+
+                        <button class="report-card">
+                            <span>♙</span>
+                            <strong>Employee Report</strong>
+                            <small>Employee master data</small>
+                        </button>
+
+                        <button class="report-card">
+                            <span>◷</span>
+                            <strong>Attendance Report</strong>
+                            <small>Attendance trends</small>
+                        </button>
+
+                        <button class="report-card">
+                            <span>☑</span>
+                            <strong>Leave Report</strong>
+                            <small>Leave utilization</small>
+                        </button>
+
+                        <button class="report-card">
+                            <span>₹</span>
+                            <strong>Payroll Report</strong>
+                            <small>Salary information</small>
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ============================= -->
+                <!-- SETTINGS -->
+                <!-- ============================= -->
+
+                <section class="page-section" id="settings">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Settings</h2>
+                            <p>Configure your HRMS portal.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-card">
+
+                        <div class="setting-row">
+
+                            <div>
+                                <strong>Organization Profile</strong>
+                                <p>Manage company information.</p>
+                            </div>
+
+                            <button class="secondary-button">
+                                Configure
                             </button>
 
                         </div>
 
 
-                        <div class="onboarding-item">
+                        <div class="setting-row">
 
-                            <div class="table-avatar">RK</div>
-
-                            <div class="onboarding-info">
-                                <strong>Rohit Kumar</strong>
-                                <small>Sales Executive</small>
-
-                                <div class="onboarding-progress">
-                                    <div style="width:55%"></div>
-                                </div>
-
-                                <span>55% completed</span>
+                            <div>
+                                <strong>Departments</strong>
+                                <p>Manage departments and teams.</p>
                             </div>
 
-                            <button class="outline-button">
-                                View
+                            <button class="secondary-button">
+                                Configure
+                            </button>
+
+                        </div>
+
+
+                        <div class="setting-row">
+
+                            <div>
+                                <strong>Leave Policies</strong>
+                                <p>Configure leave types and policies.</p>
+                            </div>
+
+                            <button class="secondary-button">
+                                Configure
+                            </button>
+
+                        </div>
+
+
+                        <div class="setting-row">
+
+                            <div>
+                                <strong>Notification Settings</strong>
+                                <p>Manage HR notifications.</p>
+                            </div>
+
+                            <button class="secondary-button">
+                                Configure
                             </button>
 
                         </div>
 
                     </div>
 
-                </div>
+                </section>
 
-            </section>
-
-
-            <!-- ================================================= -->
-            <!-- PERFORMANCE -->
-            <!-- ================================================= -->
-
-            <section class="page-section" id="performance">
-
-                <div class="section-toolbar">
-
-                    <div>
-                        <h2>Performance Management</h2>
-                        <p>Track employee goals and performance reviews.</p>
-                    </div>
-
-                    <button class="primary-button">
-                        <i class="fa-solid fa-plus"></i>
-                        Create Goal
-                    </button>
-
-                </div>
-
-
-                <div class="stats-grid">
-
-                    <div class="stat-card">
-                        <div class="stat-icon blue">
-                            <i class="fa-solid fa-bullseye"></i>
-                        </div>
-
-                        <div class="stat-content">
-                            <span>Active Goals</span>
-                            <h3>186</h3>
-                        </div>
-                    </div>
-
-
-                    <div class="stat-card">
-                        <div class="stat-icon green">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-
-                        <div class="stat-content">
-                            <span>Completed Goals</span>
-                            <h3>124</h3>
-                        </div>
-                    </div>
-
-
-                    <div class="stat-card">
-                        <div class="stat-icon orange">
-                            <i class="fa-solid fa-clock"></i>
-                        </div>
-
-                        <div class="stat-content">
-                            <span>Pending Reviews</span>
-                            <h3>18</h3>
-                        </div>
-                    </div>
-
-
-                    <div class="stat-card">
-                        <div class="stat-icon purple">
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-
-                        <div class="stat-content">
-                            <span>Average Rating</span>
-                            <h3>4.3</h3>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="dashboard-card">
-
-                    <div class="card-header">
-                        <div>
-                            <h3>Employee Performance</h3>
-                            <p>Current performance overview</p>
-                        </div>
-                    </div>
-
-
-                    <div class="table-wrapper">
-
-                        <table>
-
-                            <thead>
-                            <tr>
-                                <th>Employee</th>
-                                <th>Department</th>
-                                <th>Goal Progress</th>
-                                <th>Rating</th>
-                                <th>Review</th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-
-                            <tr>
-                                <td>Rahul Sharma</td>
-                                <td>Sales</td>
-
-                                <td>
-                                    <div class="progress-cell">
-                                        <div class="progress">
-                                            <div style="width:92%"></div>
-                                        </div>
-                                        <span>92%</span>
-                                    </div>
-                                </td>
-
-                                <td>4.5 / 5</td>
-                                <td>
-                                    <span class="status approved">Completed</span>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>Priya Nair</td>
-                                <td>HR</td>
-
-                                <td>
-                                    <div class="progress-cell">
-                                        <div class="progress">
-                                            <div style="width:88%"></div>
-                                        </div>
-                                        <span>88%</span>
-                                    </div>
-                                </td>
-
-                                <td>4.2 / 5</td>
-                                <td>
-                                    <span class="status pending">Pending</span>
-                                </td>
-                            </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================================================= -->
-            <!-- PAYROLL -->
-            <!-- ================================================= -->
-
-            <section class="page-section" id="payroll">
-
-                <div class="section-toolbar">
-
-                    <div>
-                        <h2>Payroll</h2>
-                        <p>Manage employee salary information and payslips.</p>
-                    </div>
-
-                    <button class="primary-button">
-                        <i class="fa-solid fa-file-invoice-dollar"></i>
-                        Generate Payroll
-                    </button>
-
-                </div>
-
-
-                <div class="stats-grid">
-
-                    <div class="stat-card">
-                        <div class="stat-icon blue">
-                            <i class="fa-solid fa-wallet"></i>
-                        </div>
-
-                        <div class="stat-content">
-                            <span>Monthly Payroll</span>
-                            <h3>₹1.42 Cr</h3>
-                        </div>
-                    </div>
-
-
-                    <div class="stat-card">
-                        <div class="stat-icon green">
-                            <i class="fa-solid fa-circle-check"></i>
-                        </div>
-
-                        <div class="stat-content">
-                            <span>Processed</span>
-                            <h3>242</h3>
-                        </div>
-                    </div>
-
-
-                    <div class="stat-card">
-                        <div class="stat-icon orange">
-                            <i class="fa-solid fa-hourglass-half"></i>
-                        </div>
-
-                        <div class="stat-content">
-                            <span>Pending</span>
-                            <h3>6</h3>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="dashboard-card">
-
-                    <div class="card-header">
-
-                        <div>
-                            <h3>Employee Payroll</h3>
-                            <p>September 2026 payroll</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="table-wrapper">
-
-                        <table>
-
-                            <thead>
-                            <tr>
-                                <th>Employee</th>
-                                <th>Basic Salary</th>
-                                <th>Gross Salary</th>
-                                <th>Deductions</th>
-                                <th>Net Salary</th>
-                                <th>Status</th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-
-                            <tr>
-                                <td>Rahul Sharma</td>
-                                <td>₹40,000</td>
-                                <td>₹55,000</td>
-                                <td>₹5,000</td>
-                                <td><strong>₹50,000</strong></td>
-                                <td>
-                                    <span class="status approved">Processed</span>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>Priya Nair</td>
-                                <td>₹35,000</td>
-                                <td>₹48,000</td>
-                                <td>₹4,000</td>
-                                <td><strong>₹44,000</strong></td>
-                                <td>
-                                    <span class="status approved">Processed</span>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>Arjun Kumar</td>
-                                <td>₹50,000</td>
-                                <td>₹68,000</td>
-                                <td>₹6,500</td>
-                                <td><strong>₹61,500</strong></td>
-                                <td>
-                                    <span class="status pending">Pending</span>
-                                </td>
-                            </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================================================= -->
-            <!-- EXPENSES -->
-            <!-- ================================================= -->
-
-            <section class="page-section" id="expenses">
-
-                <div class="section-toolbar">
-
-                    <div>
-                        <h2>Expense Management</h2>
-                        <p>Manage employee expense claims.</p>
-                    </div>
-
-                    <button class="primary-button">
-                        <i class="fa-solid fa-plus"></i>
-                        Submit Expense
-                    </button>
-
-                </div>
-
-
-                <div class="dashboard-card">
-
-                    <div class="table-wrapper">
-
-                        <table>
-
-                            <thead>
-                            <tr>
-                                <th>Employee</th>
-                                <th>Expense Type</th>
-                                <th>Amount</th>
-                                <th>Date</th>
-                                <th>Status</th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-
-                            <tr>
-                                <td>Rahul Sharma</td>
-                                <td>Travel</td>
-                                <td>₹4,500</td>
-                                <td>25 Sep 2026</td>
-
-                                <td>
-                                    <span class="status pending">
-                                        Pending
-                                    </span>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>Priya Nair</td>
-                                <td>Office Supplies</td>
-                                <td>₹2,200</td>
-                                <td>23 Sep 2026</td>
-
-                                <td>
-                                    <span class="status approved">
-                                        Approved
-                                    </span>
-                                </td>
-                            </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================================================= -->
-            <!-- REPORTS -->
-            <!-- ================================================= -->
-
-            <section class="page-section" id="reports">
-
-                <div class="section-toolbar">
-
-                    <div>
-                        <h2>Reports</h2>
-                        <p>View and download HR reports.</p>
-                    </div>
-
-                </div>
-
-
-                <div class="report-grid">
-
-                    <div class="report-card">
-                        <i class="fa-solid fa-users"></i>
-                        <h3>Employee Report</h3>
-                        <p>Employee directory and workforce details.</p>
-                        <button class="outline-button">Generate</button>
-                    </div>
-
-
-                    <div class="report-card">
-                        <i class="fa-solid fa-calendar-check"></i>
-                        <h3>Attendance Report</h3>
-                        <p>Monthly employee attendance report.</p>
-                        <button class="outline-button">Generate</button>
-                    </div>
-
-
-                    <div class="report-card">
-                        <i class="fa-solid fa-plane-departure"></i>
-                        <h3>Leave Report</h3>
-                        <p>Employee leave and utilization report.</p>
-                        <button class="outline-button">Generate</button>
-                    </div>
-
-
-                    <div class="report-card">
-                        <i class="fa-solid fa-money-bill"></i>
-                        <h3>Payroll Report</h3>
-                        <p>Monthly payroll summary.</p>
-                        <button class="outline-button">Generate</button>
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================================================= -->
-            <!-- SETTINGS -->
-            <!-- ================================================= -->
-
-            <section class="page-section" id="settings">
-
-                <div class="section-toolbar">
-
-                    <div>
-                        <h2>Settings</h2>
-                        <p>Configure your HRMS portal.</p>
-                    </div>
-
-                </div>
-
-
-                <div class="settings-grid">
-
-                    <div class="settings-card">
-                        <i class="fa-solid fa-building"></i>
-
-                        <div>
-                            <h3>Organization</h3>
-                            <p>Manage company information.</p>
-                        </div>
-                    </div>
-
-
-                    <div class="settings-card">
-                        <i class="fa-solid fa-users-gear"></i>
-
-                        <div>
-                            <h3>User Management</h3>
-                            <p>Manage HRMS users and roles.</p>
-                        </div>
-                    </div>
-
-
-                    <div class="settings-card">
-                        <i class="fa-solid fa-bell"></i>
-
-                        <div>
-                            <h3>Notifications</h3>
-                            <p>Configure system notifications.</p>
-                        </div>
-                    </div>
-
-
-                    <div class="settings-card">
-                        <i class="fa-solid fa-shield-halved"></i>
-
-                        <div>
-                            <h3>Security</h3>
-                            <p>Manage security preferences.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </section>
-
-        </div>
-
-    </main>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- ADD EMPLOYEE MODAL -->
-<!-- ================================================= -->
-
-<div class="modal-overlay" id="employeeModal">
-
-    <div class="modal">
-
-        <div class="modal-header">
-
-            <div>
-                <h2>Add Employee</h2>
-                <p>Create a new employee record.</p>
-            </div>
-
-            <button class="modal-close" data-close="employeeModal">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-        </div>
-
-
-        <form id="employeeForm">
-
-            <div class="form-grid">
-
-                <div class="form-group">
-                    <label>First Name</label>
-                    <input type="text" id="firstName" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Last Name</label>
-                    <input type="text" id="lastName" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Phone</label>
-                    <input type="text" id="phone">
-                </div>
-
-                <div class="form-group">
-                    <label>Department</label>
-
-                    <select id="department" required>
-                        <option value="">Select Department</option>
-                        <option>Sales</option>
-                        <option>IT</option>
-                        <option>Human Resources</option>
-                        <option>Finance</option>
-                        <option>Operations</option>
-                    </select>
-
-                </div>
-
-                <div class="form-group">
-                    <label>Designation</label>
-                    <input type="text" id="designation" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Joining Date</label>
-                    <input type="date" id="joiningDate" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Employment Type</label>
-
-                    <select>
-                        <option>Full Time</option>
-                        <option>Part Time</option>
-                        <option>Contract</option>
-                        <option>Intern</option>
-                    </select>
-
-                </div>
 
             </div>
 
-
-            <div class="modal-actions">
-
-                <button type="button"
-                        class="secondary-button"
-                        data-close="employeeModal">
-                    Cancel
-                </button>
-
-                <button type="submit"
-                        class="primary-button">
-                    Add Employee
-                </button>
-
-            </div>
-
-        </form>
+        </main>
 
     </div>
 
-</div>
 
+    <!-- ============================= -->
+    <!-- TOAST NOTIFICATION -->
+    <!-- ============================= -->
 
-<!-- ================================================= -->
-<!-- APPLY LEAVE MODAL -->
-<!-- ================================================= -->
-
-<div class="modal-overlay" id="leaveModal">
-
-    <div class="modal">
-
-        <div class="modal-header">
-
-            <div>
-                <h2>Apply Leave</h2>
-                <p>Submit a new leave request.</p>
-            </div>
-
-            <button class="modal-close" data-close="leaveModal">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-        </div>
-
-
-        <form id="leaveForm">
-
-            <div class="form-grid">
-
-                <div class="form-group">
-                    <label>Employee</label>
-
-                    <select required>
-                        <option>Rahul Sharma</option>
-                        <option>Priya Nair</option>
-                        <option>Arjun Kumar</option>
-                    </select>
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>Leave Type</label>
-
-                    <select required>
-                        <option>Casual Leave</option>
-                        <option>Sick Leave</option>
-                        <option>Earned Leave</option>
-                        <option>Unpaid Leave</option>
-                    </select>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>From Date</label>
-
-                    <input type="date" required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>To Date</label>
-
-                    <input type="date" required>
-
-                </div>
-
-
-                <div class="form-group full-width">
-
-                    <label>Reason</label>
-
-                    <textarea
-                        rows="4"
-                        placeholder="Enter reason for leave..."
-                        required></textarea>
-
-                </div>
-
-            </div>
-
-
-            <div class="modal-actions">
-
-                <button type="button"
-                        class="secondary-button"
-                        data-close="leaveModal">
-                    Cancel
-                </button>
-
-                <button type="submit"
-                        class="primary-button">
-                    Submit Request
-                </button>
-
-            </div>
-
-        </form>
-
+    <div class="toast" id="toast">
+        <span id="toastMessage">
+            Action completed
+        </span>
     </div>
 
-</div>
 
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
 
-<!-- Toast -->
-
-<div class="toast" id="toast">
-
-    <i class="fa-solid fa-circle-check"></i>
-
-    <span id="toastMessage">
-        Action completed successfully.
-    </span>
-
-</div>
-
-
-<!-- JavaScript -->
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
